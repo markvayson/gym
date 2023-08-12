@@ -60,7 +60,9 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
             ) : (
               <button
                 className={`transition-color duration-300 rounded-full p-2 ${
-                  !isMenuToggled ? "bg-indigo-600" : "bg-cyan-500"
+                  !isMenuToggled
+                    ? "bg-indigo-600 hover:bg-indigo-300"
+                    : "bg-slate-300 hover:bg-slate-600"
                 } `}
                 onClick={() => setIsMenuToggled(!isMenuToggled)}
               >
@@ -75,7 +77,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
         </div>
       </div>
       {!isAboveMediumScreens && isMenuToggled && (
-        <div className="fixed right-0 bottom-0 z-20 h-full w-[300px] bg-indigo-50 drop-shadow-xl">
+        <div className="fixed right-0 bottom-0 z-20 h-full w-[300px] bg-slate-50 drop-shadow-xl">
           <div className=" h-full items-end pr-16 flex flex-col gap-5 text-2xl justify-center">
             <Link
               page="Home"
