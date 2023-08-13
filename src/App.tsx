@@ -1,10 +1,11 @@
 import Navbar from "@/scenes/navbar";
 import { useEffect, useState } from "react";
 import { SelectedPage } from "@/shared/types";
-
+import Hero from "@/scenes/hero";
+import Benefits from "@/scenes/benefits";
 function App() {
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(
-    SelectedPage.Home,
+    SelectedPage.evofit,
   );
   const [isTopOfPage, setIsTopOfPage] = useState<boolean>(true);
 
@@ -12,7 +13,7 @@ function App() {
     const handleScroll = () => {
       if (window.scrollY === 0) {
         setIsTopOfPage(true);
-        setSelectedPage(SelectedPage.Home);
+        setSelectedPage(SelectedPage.evofit);
       }
       if (window.scrollY !== 0) setIsTopOfPage(false);
     };
@@ -27,6 +28,8 @@ function App() {
         selectedPage={selectedPage}
         setSelectedPage={setSelectedPage}
       />
+      <Hero setSelectedPage={setSelectedPage} />
+      <Benefits setSelectedPage={setSelectedPage} />
     </div>
   );
 }
