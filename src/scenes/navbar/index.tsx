@@ -19,7 +19,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
   const WhiteBackground = isTopOfPage
     ? "opacity-1"
-    : "transition-all opacity-30 border border-gray-300 hover:opacity-100 duration-300 bg-white drop-shadow";
+    : "transition-all opacity-30 hover:opacity-100";
   const pageValues = Object.values(SelectedPage);
   return (
     <nav>
@@ -27,7 +27,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
         <div className={`${flexBetween} mx-auto w-5/6`}>
           <div className={` ${flexBetween} w-full gap-16`}>
             <AnchorLink
-              href={`#evofit`}
+              href="#evofit"
               onClick={() => setSelectedPage(SelectedPage.evofit)}
               className={`${WhiteBackground} font-montserrat uppercase font-extrabold tracking-wider text-2xl ${
                 selectedPage === SelectedPage.evofit
