@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import ContactUsPageGraphic from "@/assets/ContactUsPageGraphic.png";
 import HText from "@/shared/HText";
+
 type Props = {
   setSelectedPage: (value: SelectedPage) => void;
 };
@@ -39,18 +40,20 @@ const ContactUs = ({ setSelectedPage }: Props) => {
           className="md:w-3/5"
         >
           <HText>
-            <span className="text-indigo-500">Join Now</span> TO GET IN SHAPRE
+            GET STARTED FOR
+            <span className="text-indigo-600"> FREE</span>
           </HText>
           <p className="my-5">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae,
-            maiores. Ea culpa hic delectus quasi vero nemo dolorum assumenda
-            architecto. Distinctio sunt ipsam tempore provident atque dolor
-            officia nihil magni!
+            Connect with EvoFit Hub today and take the first step towards your
+            fitness evolution. Our team is here to answer your questions,
+            provide information, and guide you on your journey to a healthier
+            lifestyle. Reach out to us to discover how we can help you achieve
+            your fitness goals
           </p>
         </motion.div>
         <div className="mt-10 justify-between gap-8 md:flex">
           <motion.div
-            className="mt-10 basis-3/5 md:mt-0"
+            className="mt-10 basis-2/5 md:mt-0"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
@@ -129,9 +132,9 @@ const ContactUs = ({ setSelectedPage }: Props) => {
             }}
             className="relative mt-16 basis-2/5 md:mt-0"
           >
-            <div className="md:before:content-evolvetext w-full before:absolute before:-bottom-20 before:-right-10 before:z-[-1]">
+            <div className="w-full before:absolute before:-bottom-20 before:-right-10 before:z-[-1] md:before:content-evolvetext">
               <img
-                className="w-full"
+                className="h-[450px] w-full"
                 alt="contact-us-image"
                 src={ContactUsPageGraphic}
               />
