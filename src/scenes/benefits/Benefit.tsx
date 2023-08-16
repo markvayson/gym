@@ -15,7 +15,7 @@ const Benefit = ({ icon, title, description, setSelectedPage }: Props) => {
   return (
     <motion.div
       variants={childVariant}
-      className=" h-full shadow-lg mt-5 rounded-md border-2 border-gray-100 px-5 py-16 text-center"
+      className=" mt-5 h-full rounded-md border-2 border-gray-100 px-5 py-16 text-center shadow-lg"
     >
       <div className="mb-4 flex justify-center">
         <div className="rounded-full border-2 border-gray-100 bg-indigo-400 p-4">
@@ -23,7 +23,7 @@ const Benefit = ({ icon, title, description, setSelectedPage }: Props) => {
         </div>
       </div>
       <h4 className="font-bold">{title}</h4>
-      <p className="my-3">{description}</p>
+      <p className="my-3 text-justify">{description}</p>
 
       <AnchorLink
         className="text-sm font-bold text-indigo-600 underline hover:text-indigo-400"

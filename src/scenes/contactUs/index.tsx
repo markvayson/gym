@@ -1,7 +1,7 @@
 import { SelectedPage } from "@/shared/types";
 import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
-import ContactUsPageGraphic from "@/assets/ContactUsPageGraphic.png";
+import ContactImage from "@/assets/image5.png";
 import HText from "@/shared/HText";
 
 type Props = {
@@ -40,9 +40,10 @@ const ContactUs = ({ setSelectedPage }: Props) => {
           className="md:w-3/5"
         >
           <HText>
-            GET STARTED FOR
-            <span className="text-indigo-600"> FREE</span>
-          </HText>
+            <p>
+              @<span className="border-b-4 border-indigo-600">connect</span>
+            </p>
+          </HText>{" "}
           <p className="my-5">
             Connect with EvoFit Hub today and take the first step towards your
             fitness evolution. Our team is here to answer your questions,
@@ -52,6 +53,25 @@ const ContactUs = ({ setSelectedPage }: Props) => {
           </p>
         </motion.div>
         <div className="mt-10 justify-between gap-8 md:flex">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            variants={{
+              hidden: { opacity: 0, y: 50 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            className="relative mt-16 basis-2/5 md:mt-0"
+          >
+            <div className="w-full before:absolute before:-bottom-20 before:-right-10 before:z-[-1] md:before:content-evolvetext">
+              <img
+                className="h-[450px] w-full"
+                alt="contact-us-image"
+                src={ContactImage}
+              />
+            </div>
+          </motion.div>
           <motion.div
             className="mt-10 basis-2/5 md:mt-0"
             initial="hidden"
@@ -120,25 +140,6 @@ const ContactUs = ({ setSelectedPage }: Props) => {
                 Submit
               </button>
             </form>
-          </motion.div>
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.5 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-            variants={{
-              hidden: { opacity: 0, y: 50 },
-              visible: { opacity: 1, y: 0 },
-            }}
-            className="relative mt-16 basis-2/5 md:mt-0"
-          >
-            <div className="w-full before:absolute before:-bottom-20 before:-right-10 before:z-[-1] md:before:content-evolvetext">
-              <img
-                className="h-[450px] w-full"
-                alt="contact-us-image"
-                src={ContactUsPageGraphic}
-              />
-            </div>
           </motion.div>
         </div>
       </motion.div>

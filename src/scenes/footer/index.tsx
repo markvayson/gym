@@ -1,4 +1,3 @@
-import Link from "@/shared/Link";
 import { SelectedPage } from "@/shared/types";
 import { motion } from "framer-motion";
 type Props = {
@@ -8,7 +7,7 @@ type Props = {
 const Footer = ({ setSelectedPage }: Props) => {
   const links = Object.values(SelectedPage);
   return (
-    <footer className=" bg-indigo-600 pt-20 text-white">
+    <footer className=" bg-indigo-600 pt-5 text-white">
       <motion.div
         onViewportEnter={() => setSelectedPage(SelectedPage.contactus)}
       >
@@ -28,11 +27,13 @@ const Footer = ({ setSelectedPage }: Props) => {
             <h4 className="py-4 font-bold">Links</h4>
             <ul className="flex flex-col">
               {links.map((link) => (
-                <Link
-                  page={link}
+                <a
+                  href={`#${link.toLowerCase().replace(" ", "")}`}
+                  onClick={() => setSelectedPage(link)}
                   key={`footer-${link}`}
-                  setSelectedPage={setSelectedPage}
-                />
+                >
+                  {link}
+                </a>
               ))}
             </ul>
           </div>
